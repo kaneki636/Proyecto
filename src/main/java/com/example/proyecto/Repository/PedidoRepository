@@ -1,0 +1,15 @@
+package com.example.proyecto.repository;
+
+import com.example.proyecto.model.Pedido;
+import com.example.proyecto.model.Cliente;
+import com.example.proyecto.model.Empleado;
+import org.springframework.data.jpa.repository.JpaRepository;
+
+import java.util.List;
+
+public interface PedidoRepository extends JpaRepository<Pedido, Integer> {
+
+    List<Pedido> findByCliente(Cliente cliente);
+
+    List<Pedido> findByEmpleado(Empleado empleado);
+}

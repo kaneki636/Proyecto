@@ -1,0 +1,12 @@
+package com.example.proyecto.repository;
+
+import com.example.proyecto.model.Usuario;
+import org.springframework.data.jpa.repository.JpaRepository;
+
+public interface UsuarioRepository extends JpaRepository<Usuario, Integer> {
+
+    // Útil para login
+    Usuario findByNombre(String nombre);
+
+    Usuario findByEmailCliente(String email); 
+}

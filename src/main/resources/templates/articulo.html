@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="es" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Productos - Happy Children</title>
+    <link rel="stylesheet" th:href="@{/css/articulo.css}">
+</head>
+<body>
+
+<header>
+    <h1>Happy Children</h1>
+    <img th:src="@{/img/logo.png}" alt="Logo de Piñatería" class="logo">
+</header>
+
+<nav>
+    <a th:href="@{/}">Inicio</a>
+    <a th:href="@{/articulo}">Productos</a>
+    <a th:href="@{/login}">Iniciar sesión</a>
+</nav>
+
+<section class="productos">
+    <h2>Nuestros Productos</h2>
+
+    <div class="contenedor-productos">
+
+        <div class="producto">
+            <img th:src="@{/img/pinata1.jpg}" alt="Piñata 1">
+            <h3>Piñata Colorida</h3>
+            <p>$60.000</p>
+        </div>
+
+        <div class="producto">
+            <img th:src="@{/img/pinata2.png}" alt="Piñata 2">
+            <h3>Piñata Temática</h3>
+            <p>$75.000</p>
+        </div>
+
+        <div class="producto">
+            <img th:src="@{/img/globos.jpg}" alt="Globos">
+            <h3>Pack de Globos</h3>
+            <p>$20.000</p>
+        </div>
+
+        <div class="producto">
+            <img th:src="@{/img/luces.jpg}" alt="Luces">
+            <h3>Luces de Fiesta</h3>
+            <p>$55.000</p>
+        </div>
+
+        <div class="producto">
+            <img th:src="@{/img/decoracion1.jpg}" alt="Decoración 1">
+            <h3>Decoración de Fiesta</h3>
+            <p>$45.000</p>
+        </div>
+
+    </div>
+</section>
+
+</body>
+</html>

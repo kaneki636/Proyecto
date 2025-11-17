@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="es" xmlns:th="http://www.thymeleaf.org">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Tienda de Piñatas</title>
+
+  <!-- CSS -->
+  <link rel="stylesheet" th:href="@{/css/pinateria.css}">
+</head>
+<body>
+
+  <!-- Header -->
+  <header>
+    <h1>Happy Children</h1>
+    <img th:src="@{/img/logo.png}" alt="Logo de Piñatería" class="logo">
+  </header>
+
+  <!-- Navbar -->
+  <nav>
+    <a th:href="@{/}">Inicio</a>
+    <a th:href="@{/articulo}">Productos</a>
+
+    <!-- Si el usuario NO ha iniciado sesión -->
+    <a th:if="${#authentication.principal?.username == null}" th:href="@{/login}">
+      Iniciar sesión
+    </a>
+
+    <!-- Si el usuario SÍ ha iniciado sesión -->
+    <form th:if="${#authentication.principal?.username != null}"
+          th:action="@{/logout}" method="post"
+          style="display:inline;">
+        <input type="hidden" th:name="${_csrf.parameterName}" th:value="${_csrf.token}" />
+        <button type="submit" style="background:none; border:none; color:white; cursor:pointer; font-size:16px;">
+            Cerrar sesión
+        </button>
+    </form>
+  </nav>
+
+  <!-- Carrusel -->
+  <div class="carrusel">
+    <div class="track">
+      <img th:src="@{/img/image 1.jpg}" alt="Imagen 1">
+      <img th:src="@{/img/image 2.jpg}" alt="Imagen 2">
+      <img th:src="@{/img/image 3.jpg}" alt="Imagen 3">
+    </div>
+  </div>
+
+  <!-- Bienvenida -->
+  <h1 class="titulo">Bienvenidos a Nuestra Piñatería</h1>
+
+  <section class="nosotros">
+    <div class="nosotros-contenido">
+
+      <div class="nosotros-texto">
+        <h2>Sobre Nosotros</h2>
+        <p>
+          En <strong>Happy Children</strong> llevamos más de 10 años llenando de alegría las fiestas
+          infantiles con nuestras piñatas hechas a mano. Creemos que cada celebración debe ser única,
+          por eso diseñamos piñatas personalizadas y ofrecemos una gran variedad de estilos para que 
+          cada niño viva un momento inolvidable.
+        </p>
+        <p>
+          Nuestro compromiso es ofrecer <span class="destacado">calidad, creatividad y diversión</span> 
+          en cada producto. ¡Queremos ser parte de tus recuerdos más felices!
+        </p>
+      </div>
+
+      <div class="nosotros-img">
+        <img th:src="@{/img/oip.jpg}" alt="Equipo de la Piñatería">
+      </div>
+
+    </div>
+  </section>
+
+  <!-- Productos destacados -->
+  <section class="destacados">
+    <h2>🎉 Productos Destacados</h2>
+
+    <div class="grid-destacados">
+
+      <div class="card">
+        <img th:src="@{/img/pinata1.jpg}" alt="Piñata">
+        <h3>Piñata Colorida</h3>
+        <p>$60.000</p>
+      </div>
+
+      <div class="card">
+        <img th:src="@{/img/globos.jpg}" alt="Globos">
+        <h3>Pack de Globos</h3>
+        <p>$20.000</p>
+      </div>
+
+      <div class="card">
+        <img th:src="@{/img/luces.jpg}" alt="Luces">
+        <h3>Luces de Fiesta</h3>
+        <p>$55.000</p>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- Testimonios -->
+  <section class="testimonios">
+    <h2>💬 Testimonios</h2>
+
+    <div class="testimonios-container">
+
+      <div class="testimonio">
+        <p>"Las mejores piñatas, súper resistentes y hermosas. A mis hijos les encantaron."</p>
+        <h4>- María Gómez</h4>
+      </div>
+
+      <div class="testimonio">
+        <p>"Excelente atención y productos de calidad. Recomiendo totalmente Happy Children."</p>
+        <h4>- Juan Pérez</h4>
+      </div>
+
+      <div class="testimonio">
+        <p>"Hicieron mi fiesta inolvidable, todo lo compré aquí. 100% recomendado."</p>
+        <h4>- Andrea Torres</h4>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <div class="footer-container">
+      <div class="footer-info">
+        <h3>Happy Children</h3>
+        <p>📍 Dirección: Calle Fiestas #123</p>
+        <p>📞 Teléfono: +57 300 123 4567</p>
+        <p>✉️ Email: contacto@happychildren.com</p>
+      </div>
+
+      <div class="footer-social">
+        <h4>Síguenos</h4>
+        <a href="#">Facebook</a>
+        <a href="#">Instagram</a>
+        <a href="#">TikTok</a>
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      <p>&copy; 2025 Happy Children - Todos los derechos reservados</p>
+    </div>
+  </footer>
+
+  
+
+</body>
+</html>

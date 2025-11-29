@@ -1,0 +1,687 @@
+/* 🔹 Estilos generales */
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: #fdf6f0;
+  color: #333;
+}
+
+/* 🔹 Header */
+header {
+  background-color: #ff6b6b;
+  color: white;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 30px;
+}
+
+header h1 {
+  margin: 0;
+  font-size: 28px;
+}
+
+header img.logo {
+  height: 50px;
+}
+
+/* 🔹 Navegación */
+nav {
+  background-color: #4ecdc4;
+  padding: 12px;
+  text-align: center;
+}
+
+nav a {
+  color: white;
+  text-decoration: none;
+  margin: 0 15px;
+  font-weight: bold;
+  transition: color 0.3s ease;
+}
+
+nav a:hover {
+  color: #ffca28;
+  text-decoration: underline;
+}
+
+/* 🔹 Título principal */
+.titulo {
+  text-align: center;
+  font-size: 32px;
+  color: #ff6b6b;
+  font-weight: bold;
+  margin: 30px 0;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+}
+
+/* 🔹 Grid de productos */
+.container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 20px;
+  padding: 20px;
+  width: 90%;
+  margin: auto;
+}
+
+/* 🔹 Tarjetas de producto */
+.product {
+  background-color: white;
+  border-radius: 12px;
+  padding: 15px;
+  text-align: center;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.product:hover {
+  transform: translateY(-5px) scale(1.05);
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.2);
+}
+
+.product img {
+  max-width: 100%;
+  height: 180px;
+  object-fit: contain;
+  border-radius: 10px;
+  margin-bottom: 10px;
+}
+
+.product h3 {
+  margin: 10px 0;
+  color: #444;
+  font-size: 18px;
+}
+
+/* 🔹 Botones */
+.btn {
+  padding: 12px 25px;
+  font-size: 16px;
+  border: none;
+  border-radius: 8px;
+  margin: 5px;
+  cursor: pointer;
+  transition: background 0.3s ease, transform 0.2s;
+  color: white;
+  font-weight: bold;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  background: linear-gradient(135deg, #ff6b6b, #ffca28);
+}
+
+.btn:hover {
+  transform: scale(1.08);
+  background: linear-gradient(135deg, #ffca28, #ff6b6b);
+}
+
+
+/* ===== INPUT DE CANTIDAD ===== */
+.cantidad-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  margin-top: 10px;
+}
+
+.cantidad-label {
+  font-weight: bold;
+  color: #444;
+  font-size: 15px;
+}
+
+.cantidad-input {
+  width: 60px;
+  text-align: center;
+  font-size: 16px;
+  border: 2px solid #4ecdc4; /* Color turquesa */
+  border-radius: 6px;
+  padding: 6px;
+  transition: all 0.3s ease;
+  outline: none;
+}
+
+.cantidad-input:focus {
+  border-color: #ff6b6b;
+  box-shadow: 0 0 5px rgba(255, 107, 107, 0.5);
+}
+
+.cantidad-btn {
+  background-color: #ff6b6b;
+  color: white;
+  border: none;
+  padding: 6px 10px;
+  border-radius: 5px;
+  font-weight: bold;
+  font-size: 16px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.cantidad-btn:hover {
+  background-color: #ff5252;
+  transform: scale(1.1);
+}
+
+/* ===== CARRITO DE COMPRAS ===== */
+.carrito-container {
+  position: fixed;
+  /* Posición fija */
+  top: 20px;
+  /* Distancia desde arriba */
+  right: 20px;
+  /* Distancia desde derecha */
+  z-index: 1000;
+  /* Capa superior */
+}
+
+/* Botón del carrito */
+.btn-carrito {
+  background-color: #ff6b6b;
+  /* Rojo coral */
+  color: white;
+  /* Texto blanco */
+  border: none;
+  /* Sin borde */
+  padding: 10px 20px;
+  /* Espaciado interno */
+  border-radius: 50px;
+  /* Forma ovalada */
+  cursor: pointer;
+  /* Cursor pointer */
+  font-size: 16px;
+  /* Tamaño de fuente */
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+  /* Sombra sutil */
+  display: flex;
+  /* Usa flexbox */
+  align-items: center;
+  /* Centrado vertical */
+  gap: 8px;
+  /* Espacio entre elementos */
+  transition: all 0.3s ease;
+  /* Transición suave */
+}
+
+/* Efecto hover en botón de carrito */
+.btn-carrito:hover {
+  background-color: #ff5252;
+  /* Rojo más intenso */
+  transform: scale(1.05);
+  /* Ligero aumento de tamaño */
+}
+
+/* Contenedor del carrito */
+.carrito-compras {
+  display: none;
+  /* Oculto por defecto */
+  position: absolute;
+  /* Posición absoluta */
+  right: 0;
+  /* Alineado a la derecha */
+  top: 50px;
+  /* Distancia desde arriba */
+  background-color: white;
+  /* Fondo blanco */
+  width: 350px;
+  /* Ancho fijo */
+  max-height: 500px;
+  /* Altura máxima */
+  overflow-y: auto;
+  /* Scroll vertical si es necesario */
+  border-radius: 10px;
+  /* Esquinas redondeadas */
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+  /* Sombra */
+  padding: 15px;
+  /* Espaciado interno */
+}
+
+/* Items del carrito */
+.item-carrito {
+  display: flex;
+  /* Usa flexbox */
+  justify-content: space-between;
+  /* Espacio entre elementos */
+  align-items: center;
+  /* Centrado vertical */
+  padding: 10px 0;
+  /* Espaciado vertical */
+  border-bottom: 1px solid #eee;
+  /* Borde inferior */
+}
+
+/* Imágenes en el carrito */
+.item-carrito img {
+  width: 50px;
+  /* Ancho fijo */
+  height: 50px;
+  /* Altura fija */
+  object-fit: cover;
+  /* Ajuste de imagen */
+  border-radius: 5px;
+  /* Esquinas redondeadas */
+}
+
+/* Información del item */
+.info-item {
+  flex-grow: 1;
+  /* Ocupa espacio disponible */
+  padding: 0 15px;
+  /* Espaciado horizontal */
+}
+
+/* Botón para vaciar carrito */
+.vaciar-carrito {
+  background-color: #f8f9fa;
+  /* Fondo gris claro */
+  color: #dc3545;
+  /* Rojo */
+}
+
+.vaciar-carrito:hover {
+  background-color: #e2e6ea;
+  /* Gris más oscuro */
+}
+
+/* Botón para comprar */
+.comprar-carrito {
+  background-color: #28a745;
+  /* Verde */
+  color: white;
+  /* Texto blanco */
+}
+
+.comprar-carrito:hover {
+  background-color: #218838;
+  /* Verde oscuro */
+}
+
+/* Mostrar carrito cuando tiene clase 'mostrar' */
+.carrito-compras.mostrar {
+  display: block;
+  /* Se muestra */
+}
+
+/* ===== CONTROLES DE CANTIDAD EN EL CARRITO ===== */
+.cantidad-control {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  margin-top: 5px;
+}
+
+.cantidad-btn {
+  background-color: #4ecdc4;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  padding: 5px 10px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.cantidad-btn:hover {
+  background-color: #3bb5ac;
+  transform: scale(1.1);
+}
+
+.cantidad-input {
+  width: 50px;
+  text-align: center;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+/* Checkbox de selección múltiple */
+.seleccionar-item {
+  transform: scale(1.2);
+  cursor: pointer;
+  accent-color: #ff6b6b;
+}
+
+/* Botón eliminar seleccionados */
+.eliminar-seleccionados {
+  display: block;
+  margin: 10px auto;
+  background-color: #ff6b6b;
+  color: white;
+  padding: 8px 16px;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  font-weight: bold;
+  transition: 0.2s ease;
+}
+
+.eliminar-seleccionados:hover {
+  background-color: #e63946;
+  transform: scale(1.05);
+}
+
+
+/* ===== NOTIFICACIONES ===== */
+.notificacion {
+  position: fixed;
+  /* Posición fija */
+  bottom: 20px;
+  /* Distancia desde abajo */
+  left: 50%;
+  /* Centrado horizontal */
+  transform: translateX(-50%);
+  /* Ajuste fino de centrado */
+  background-color: #333;
+  /* Fondo oscuro */
+  color: white;
+  /* Texto blanco */
+  padding: 12px 24px;
+  /* Espaciado interno */
+  border-radius: 4px;
+  /* Esquinas redondeadas */
+  opacity: 0;
+  /* Invisible por defecto */
+  transition: opacity 0.3s ease;
+  /* Transición suave */
+  z-index: 1000;
+  /* Capa superior */
+}
+
+/* Notificación visible */
+.notificacion.mostrar {
+  opacity: 1;
+  /* Visible */
+}
+
+/* ===== MODAL DE PAGO ===== */
+.modal-pago {
+  display: none;
+  /* Oculto por defecto */
+  position: fixed;
+  /* Posición fija */
+  z-index: 2000;
+  /* Capa superior */
+  left: 0;
+  /* Desde izquierda */
+  top: 0;
+  /* Desde arriba */
+  width: 100%;
+  /* Ancho completo */
+  height: 100%;
+  /* Altura completa */
+  background-color: rgba(0, 0, 0, 0.5);
+  /* Fondo semitransparente */
+}
+
+/* Contenido del modal */
+.contenido-modal {
+  background-color: #fff;
+  /* Fondo blanco */
+  margin: 5% auto;
+  /* Centrado vertical con margen */
+  padding: 25px;
+  /* Espaciado interno */
+  border-radius: 10px;
+  /* Esquinas redondeadas */
+  width: 90%;
+  /* Ancho relativo */
+  max-width: 600px;
+  /* Ancho máximo */
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+  /* Sombra */
+  position: relative;
+  /* Para posicionar elementos hijos */
+  box-sizing: border-box;
+  /* Incluye padding y border en el ancho */
+  overflow-x: hidden;
+  /* Previene scroll horizontal */
+}
+
+/* Botón para cerrar modal */
+.cerrar-modal {
+  position: absolute;
+  /* Posición absoluta */
+  right: 20px;
+  /* Distancia desde derecha */
+  top: 15px;
+  /* Distancia desde arriba */
+  font-size: 28px;
+  /* Tamaño grande */
+  font-weight: bold;
+  /* Negrita */
+  cursor: pointer;
+  /* Cursor pointer */
+}
+
+/* Efecto hover en botón cerrar */
+.cerrar-modal:hover {
+  color: #ff5252;
+  /* Rojo */
+}
+
+/* Métodos de pago */
+.metodos-pago {
+  display: grid;
+  /* Usa grid */
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  /* 2 columnas iguales */
+  gap: 15px;
+  /* Espacio entre elementos */
+  margin: 20px 0;
+}
+
+/* Opciones de método de pago */
+.metodo-pago {
+  border: 1px solid #ddd;
+  /* Aplica un borde sutil gris claro */
+  border-radius: 8px;
+  /* Esquinas ligeramente redondeadas */
+  padding: 15px;
+  /* Espaciado interno uniforme alrededor del contenido */
+  text-align: center;
+  /* Centra el texto horizontalmente */
+  cursor: pointer;
+  /* Cambia el cursor a "mano" al pasar el mouse */
+  transition: all 0.3s ease;
+  /* Anima suavemente los cambios (hover, selección, etc.) */
+  background-color: #fff;
+  /* Fondo blanco */
+  overflow: hidden;
+  /* Oculta cualquier contenido que se desborde del contenedor */
+  display: flex;
+  /* Convierte el contenedor en un flexbox */
+  flex-direction: column;
+  /* Organiza los hijos (imagen y texto) en columna vertical */
+  align-items: center;
+  /* Centra los elementos hijos horizontalmente */
+  justify-content: center;
+  /* Centra los elementos hijos verticalmente */
+}
+
+.metodo-pago img {
+  width: 100px;
+  /* Ancho fijo de 100 píxeles */
+  height: auto;
+  /* Altura proporcional al ancho para mantener aspecto */
+  object-fit: contain;
+  /* La imagen se ajusta sin recortarse ni deformarse */
+  margin-bottom: 10px;
+  /* Espacio entre la imagen y el texto */
+  max-height: 80px;
+  /* Altura máxima para evitar imágenes demasiado altas */
+}
+
+.metodo-pago p {
+  font-size: 14px;
+  /* Tamaño de fuente pequeño */
+  color: #333;
+  /* Color de texto gris oscuro (legible) */
+  margin: 0;
+  /* Elimina márgenes por defecto (evita espacio extra debajo del texto) */
+}
+
+.metodo-pago.activo {
+  border: 2px solid #ff6b6b;
+  /* Borde más grueso y color coral cuando está activo */
+  background-color: #fff0f0;
+  /* Fondo suave rojo claro para destacar la selección */
+}
+
+/* Efecto hover en métodos de pago */
+.metodo-pago:hover {
+  border-color: #ff6b6b;
+  /* Borde rojo */
+  background-color: #fff9f9;
+  /* Fondo muy claro */
+}
+
+/* Método de pago activo/seleccionado */
+.metodo-pago.activo {
+  border-color: #ff6b6b;
+  /* Borde rojo */
+  background-color: #fff0f0;
+  /* Fondo rojo claro */
+}
+
+/* Formularios de pago */
+.formulario-pago {
+  display: none;
+  /* Oculto por defecto */
+  margin-top: 20px;
+  /* Margen superior */
+  padding-top: 20px;
+  /* Espaciado superior */
+  border-top: 1px solid #eee;
+  /* Borde superior */
+}
+
+/* Mostrar formulario cuando tiene clase 'mostrar' */
+.formulario-pago.mostrar {
+  display: block;
+  /* Se muestra */
+}
+
+/* Grupos de formulario */
+.form-group {
+  margin-bottom: 15px;
+  /* Margen inferior */
+}
+
+/* Etiquetas de formulario */
+.form-group label {
+  display: block;
+  /* Mostrar como bloque */
+  margin-bottom: 5px;
+  /* Margen inferior */
+  font-weight: 500;
+  /* Peso de fuente */
+}
+
+/* Campos de entrada */
+.form-group input {
+  width: 100%;
+  /* Ancho completo */
+  padding: 10px;
+  /* Espaciado interno */
+  border: 1px solid #ddd;
+  /* Borde sutil */
+  border-radius: 5px;
+  /* Esquinas redondeadas */
+  font-size: 16px;
+  /* Tamaño de fuente */
+}
+
+/* Grupo doble (para campos lado a lado) */
+.form-group-doble {
+  display: grid;
+  /* Usa grid */
+  grid-template-columns: 1fr 1fr;
+  /* 2 columnas iguales */
+  gap: 15px;
+  /* Espacio entre columnas */
+}
+
+/* Botón de pagar */
+.btn-pagar {
+  background-color: #28a745;
+  /* Verde */
+  color: white;
+  /* Texto blanco */
+  border: none;
+  /* Sin borde */
+  padding: 12px 20px;
+  /* Espaciado interno */
+  border-radius: 5px;
+  /* Esquinas redondeadas */
+  font-size: 16px;
+  /* Tamaño de fuente */
+  font-weight: bold;
+  /* Negrita */
+  cursor: pointer;
+  /* Cursor pointer */
+  width: 100%;
+  /* Ancho completo */
+  margin-top: 15px;
+  /* Margen superior */
+}
+
+/* Efecto hover en botón pagar */
+.btn-pagar:hover {
+  background-color: #218838;
+  /* Verde oscuro */
+}
+
+/* 🔹 Footer */
+footer {
+  background-color: #4ecdc4;
+  color: white;
+  padding: 30px 20px 10px 20px;
+  margin-top: 50px;
+}
+
+.footer-container {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  max-width: 1200px;
+  margin: auto;
+  text-align: left;
+}
+
+.footer-info h3 {
+  margin-bottom: 10px;
+  color: #ffca28;
+}
+
+.footer-info p {
+  margin: 5px 0;
+  font-size: 14px;
+}
+
+.footer-social h4 {
+  margin-bottom: 10px;
+  color: #ffca28;
+}
+
+.footer-social a {
+  display: block;
+  color: white;
+  text-decoration: none;
+  margin: 5px 0;
+  transition: color 0.3s ease;
+}
+
+.footer-social a:hover {
+  color: #ffca28;
+}
+
+.footer-bottom {
+  text-align: center;
+  margin-top: 20px;
+  border-top: 1px solid rgba(255, 255, 255, 0.3);
+  padding-top: 10px;
+  font-size: 14px;
+}

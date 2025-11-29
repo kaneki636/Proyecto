@@ -1,0 +1,696 @@
+<!DOCTYPE html>
+<html lang="es" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Productos - Happy Children</title>
+    <link rel="stylesheet" th:href="@{/css/productos.css}">
+</head>
+<body>
+
+<header>
+    <h1>Happy Children</h1>
+    <img th:src="@{/img/logo.png}" alt="Logo de Piñatería" class="logo">
+</header>
+
+  <nav>
+    <a th:href="@{/index}">Inicio</a>
+    <a th:href="@{/articulo}">Productos</a>
+
+
+    <a th:if="${#authentication.principal?.username == null}" th:href="@{/login}">
+      Iniciar sesión
+    </a>
+
+    
+    <form th:if="${#authentication.principal?.username != null}"
+          th:action="@{/logout}" method="post"
+          style="display:inline;">
+        <input type="hidden" th:name="${_csrf.parameterName}" th:value="${_csrf.token}" />
+        <button type="submit" style="background:none; border:none; color:white; cursor:pointer; font-size:16px;">
+            Cerrar sesión
+        </button>
+    </form>
+  </nav>
+
+  <div class="container">
+
+    <div class="product">
+      <img src="img/antifaz.jpg" alt="Antifaz">
+      <h3>Antifaz</h3>
+      <button class="btn precio">$45.000</button>
+      <input type="number" class="cantidad-input" min="1" value="1">
+      <button class="btn comprar">Comprar</button>
+    </div>
+
+    <div class="product">
+      <img src="img/bolsa dulces-2.jpg" alt="Bolsa de dulces">
+      <h3>Bolsa de Dulces</h3>
+      <button class="btn precio">$45.000</button>
+      <input type="number" class="cantidad-input" min="1" value="1">
+      <button class="btn comprar">Comprar</button>
+    </div>
+
+    <div class="product">
+      <img src="img/cubiertos de fiesta-1.jpg" alt="Cubiertos de fiesta">
+      <h3>Cubiertos de Fiesta</h3>
+      <button class="btn precio">$48.000</button>
+      <input type="number" class="cantidad-input" min="1" value="1">
+      <button class="btn comprar">Comprar</button>
+    </div>
+
+    <div class="product">
+      <img src="img/cubiertos de fiesta-2.jpg" alt="Cubiertos de fiesta">
+      <h3>Cubiertos de Fiesta</h3>
+      <button class="btn precio">$48.000</button>
+      <input type="number" class="cantidad-input" min="1" value="1">
+      <button class="btn comprar">Comprar</button>
+    </div>
+
+    <div class="product">
+      <img src="img/cubiertos de fiesta-3.jpg" alt="Cubiertos de fiesta">
+      <h3>Cubiertos de Fiesta</h3>
+      <button class="btn precio">$48.000</button>
+      <input type="number" class="cantidad-input" min="1" value="1">
+      <button class="btn comprar">Comprar</button>
+    </div>
+
+    <div class="product">
+      <img src="img/cubiertos de fiesta-4.jpg" alt="Cubiertos de fiesta">
+      <h3>Cubiertos de Fiesta</h3>
+      <button class="btn precio">$48.000</button>
+      <input type="number" class="cantidad-input" min="1" value="1">
+      <button class="btn comprar">Comprar</button>
+    </div>
+
+    <div class="product">
+      <img src="img/cubiertos de fiesta-5.jpg" alt="Cubiertos de fiesta">
+      <h3>Cubiertos de Fiesta</h3>
+      <button class="btn precio">$48.000</button>
+      <input type="number" class="cantidad-input" min="1" value="1">
+      <button class="btn comprar">Comprar</button>
+    </div>
+
+    <div class="product">
+      <img src="img/cubiertos de fiesta-6.jpg" alt="Cubiertos de fiesta">
+      <h3>Cubiertos de Fiesta</h3>
+      <button class="btn precio">$48.000</button>
+      <input type="number" class="cantidad-input" min="1" value="1">
+      <button class="btn comprar">Comprar</button>
+    </div>
+
+    <div class="product">
+      <img src="img/globos.jpg" alt="Globos">
+      <h3>Globos metalicos mixtos</h3>
+      <button class="btn precio">$45.000</button>
+      <input type="number" class="cantidad-input" min="1" value="1">
+      <button class="btn comprar">Comprar</button>
+    </div>
+
+     <div class="product">
+      <img src="img/globo_m2.jpg" alt="Globos">
+      <h3>Globos metalicos unicolor</h3>
+      <button class="btn precio">$45.000</button>
+      <input type="number" class="cantidad-input" min="1" value="1">
+      <button class="btn comprar">Comprar</button>
+    </div>
+
+    <!-- Producto 5 -->
+    <div class="product">
+        <h3>Caja de 15</h3>
+        <img src={{ asset('img/cajas.jpg') }} alt="Caja de 15 años">
+        <div>
+            <button class="btn precio">$22.000</button>
+            <input type="number" class="cantidad-input" min="1" value="1">
+            <button class="btn comprar">Comprar</button>
+        </div>
+    </div>
+
+    <!-- Producto 6 -->
+    <div class="product">
+        <h3>Piñata sencilla</h3>
+        <img src={{ asset('img/pinata_s.jpg') }} alt="Piñata">
+        <div>
+            <button class="btn precio">$8.000</button>
+            <input type="number" class="cantidad-input" min="1" value="1">
+            <button class="btn comprar">Comprar</button>
+        </div>
+    </div>
+
+    <!-- Producto 7 -->
+    <div class="product">
+        <h3>Platos de Coche</h3>
+        <img src={{ asset('img/platos_c.jpg') }} alt="Coche">
+        <div>
+            <button class="btn precio">$15.000</button>
+            <input type="number" class="cantidad-input" min="1" value="1">
+            <button class="btn comprar">Comprar</button>
+        </div>
+    </div>
+
+    <!-- Producto 8 -->
+    <div class="product">
+        <h3>Cono</h3>
+        <img src={{ asset('img/conos.jpg') }} alt="Cono">
+        <div>
+            <button class="btn precio">$18.000</button>
+            <input type="number" class="cantidad-input" min="1" value="1">
+            <button class="btn comprar">Comprar</button>
+        </div>
+    </div>
+
+    <!-- Producto 9 -->
+    <div class="product">
+        <h3>Espantasuegra</h3>
+        <img src="img/espantasuegra.jpg" alt="Espantasuegra">
+        <div>
+            <button class="btn precio">$12.000</button>
+            <input type="number" class="cantidad-input" min="1" value="1">
+            <button class="btn comprar">Comprar</button>
+        </div>
+    </div>
+
+    <!-- Producto 10 -->
+    <div class="product">
+        <h3>Gafas</h3>
+        <img src="img/gafas.jpg" alt="Gafas">
+        <div>
+            <button class="btn precio">$25.000</button>
+            <input type="number" class="cantidad-input" min="1" value="1">
+            <button class="btn comprar">Comprar</button>
+        </div>
+    </div>
+
+    <!-- Producto 11 -->
+    <div class="product">
+        <h3>Gorro de fiesta sencillo</h3>
+        <img src={{ asset('img/gorro.jpg') }} alt="Gorro">
+        <div>
+            <button class="btn precio">$20.000</button>
+            <input type="number" class="cantidad-input" min="1" value="1">
+            <button class="btn comprar">Comprar</button>
+        </div>
+    </div>
+
+     <div class="product">
+        <h3>Sombrero de fiesta</h3>
+        <img src={{ asset('img/gorro1.jpg') }} alt="Gorro">
+        <div>
+            <button class="btn precio">$20.000</button>
+            <input type="number" class="cantidad-input" min="1" value="1">
+            <button class="btn comprar">Comprar</button>
+        </div>
+    </div>
+
+     <div class="product">
+        <h3>Gorro infantiles</h3>
+        <img src={{ asset('img/gorro2.jpg') }} alt="Gorro">
+        <div>
+            <button class="btn precio">$20.000</button>
+            <input type="number" class="cantidad-input" min="1" value="1">
+            <button class="btn comprar">Comprar</button>
+        </div>
+    </div>
+    
+    <!-- Producto 12 -->
+    <div class="product">
+        <h3>Luces</h3>
+        <img src="img/luces.jpg" alt="Luces">
+        <div>
+            <button class="btn precio">$55.000</button>
+            <input type="number" class="cantidad-input" min="1" value="1">
+            <button class="btn comprar">Comprar</button>
+        </div>
+    </div>
+
+    <!-- Producto 13 -->
+    <div class="product">
+        <h3>Espanta suegra infantil</h3>
+        <img src={{ asset('img/espantasuegras_infantil.jpg') }} alt="espantasuegras infantil">
+        <div>
+            <button class="btn precio">$10.000</button>
+            <input type="number" class="cantidad-input" min="1" value="1">
+            <button class="btn comprar">Comprar</button>
+        </div>
+    </div>
+
+    <!-- Producto 14 -->
+    <div class="product">
+        <h3>Piñata</h3>
+        <img src="img/pinata.jpg" alt="Piñata">
+        <div>
+            <button class="btn precio">$60.000</button>
+            <input type="number" class="cantidad-input" min="1" value="1">
+            <button class="btn comprar">Comprar</button>
+        </div>
+    </div>
+
+    
+    <div class="product">
+        <h3>Serpentina sencilla</h3>
+        <img src={{ asset('img/serpentina.jpg') }} alt="Serpentina">
+        <div>
+            <button class="btn precio">$15.000</button>
+            <input type="number" class="cantidad-input" min="1" value="1">
+            <button class="btn comprar">Comprar</button>
+        </div>
+    </div>
+
+    <div class="product">
+        <h3>Serpentina metalisada</h3>
+        <img src={{ asset('img/Serpentina1.jpg') }} alt="Serpentina">
+        <div>
+            <button class="btn precio">$15.000</button>
+            <input type="number" class="cantidad-input" min="1" value="1">
+            <button class="btn comprar">Comprar</button>
+        </div>
+    </div>
+
+
+    <!-- Producto  -->
+    <div class="product">
+        <h3>Caja de letras</h3>
+        <img src={{ asset('img/cajas1.jpg') }} alt="Caja de letras">
+        <div>
+            <button class="btn precio">$22.000</button>
+            <input type="number" class="cantidad-input" min="1" value="1">
+            <button class="btn comprar">Comprar</button>
+        </div>
+    </div>
+
+    <!-- Producto 5 -->
+    <div class="product">
+        <h3>Caja sencilla</h3>
+        <img src={{ asset('img/cajas2.jpg') }} alt="Caja sencilla">
+        <div>
+            <button class="btn precio">$22.000</button>
+            <input type="number" class="cantidad-input" min="1" value="1">
+            <button class="btn comprar">Comprar</button>
+        </div>
+    </div>
+
+    <div class="product">
+        <h3>Lanza confeti</h3>
+        <img src={{ asset('img/confeti.jpg') }} alt="Confeti">
+        <div>
+            <button class="btn precio">$22.000</button>
+            <input type="number" class="cantidad-input" min="1" value="1">
+            <button class="btn comprar">Comprar</button>
+        </div>
+    </div>
+
+    <div class="product">
+        <h3>Confeti en bolsa</h3>
+        <img src={{ asset('img/confeti1.jpg') }} alt="Confeti">
+        <div>
+            <button class="btn precio">$22.000</button>
+            <input type="number" class="cantidad-input" min="1" value="1">
+            <button class="btn comprar">Comprar</button>
+        </div>
+    </div>
+
+    <div class="product">
+        <h3>Bolsa de dulces</h3>
+        <img src={{ asset('img/bolsa_dulces.jpg') }} alt="dulces">
+        <div>
+            <button class="btn precio">$8.000</button>
+            <input type="number" class="cantidad-input" min="1" value="1">
+            <button class="btn comprar">Comprar</button>
+        </div>
+    </div>
+
+     <div class="product">
+        <h3>Bolsas</h3>
+        <img src={{ asset('img/bolsa.jpg') }} alt="bolsa">
+        <div>
+            <button class="btn precio">$5.000</button>
+            <input type="number" class="cantidad-input" min="1" value="1">
+            <button class="btn comprar">Comprar</button>
+        </div>
+    </div>
+
+     <div class="product">
+        <h3>Collares</h3>
+        <img src={{ asset('img/collar.jpg') }} alt="collar">
+        <div>
+            <button class="btn precio">$10.000</button>
+            <input type="number" class="cantidad-input" min="1" value="1">
+            <button class="btn comprar">Comprar</button>
+        </div>
+    </div>
+
+    <div class="product">
+        <h3>Decoracion</h3>
+        <img src={{ asset('img/decoracion-1.jpg') }} alt="decoracion">
+        <div>
+            <button class="btn precio">$40.000</button>
+            <input type="number" class="cantidad-input" min="1" value="1">
+            <button class="btn comprar">Comprar</button>
+        </div>
+    </div>
+
+    <div class="product">
+        <h3>Decoracion</h3>
+        <img src={{ asset('img/decoracion-2.jpg') }} alt="decoracion">
+        <div>
+            <button class="btn precio">$40.000</button>
+            <input type="number" class="cantidad-input" min="1" value="1">
+            <button class="btn comprar">Comprar</button>
+        </div>
+    </div>
+
+    <div class="product">
+        <h3>Decoracion</h3>
+        <img src={{ asset('img/decoracion-3.jpg') }} alt="decoracion">
+        <div>
+            <button class="btn precio">$40.000</button>
+            <input type="number" class="cantidad-input" min="1" value="1">
+            <button class="btn comprar">Comprar</button>
+        </div>
+    </div>
+
+    <div class="product">
+        <h3>Decoracion</h3>
+        <img src={{ asset('img/decoracion-4.jpg') }} alt="decoracion">
+        <div>
+            <button class="btn precio">$40.000</button>
+            <input type="number" class="cantidad-input" min="1" value="1">
+            <button class="btn comprar">Comprar</button>
+        </div>
+    </div>
+
+    <div class="product">
+        <h3>Decoracion</h3>
+        <img src={{ asset('img/decoracion-5.jpg') }} alt="decoracion">
+        <div>
+            <button class="btn precio">$40.000</button>
+            <input type="number" class="cantidad-input" min="1" value="1">
+            <button class="btn comprar">Comprar</button>
+        </div>
+    </div>
+
+    <div class="product">
+        <h3>Decoracion</h3>
+        <img src={{ asset('img/decoracion-6.jpg') }} alt="decoracion">
+        <div>
+            <button class="btn precio">$40.000</button>
+            <input type="number" class="cantidad-input" min="1" value="1">
+            <button class="btn comprar">Comprar</button>
+        </div>
+    </div>
+
+
+    <div class="product">
+        <h3>Decoracion</h3>
+        <img src={{ asset('img/decoracion-7.jpg') }} alt="decoracion">
+        <div>
+            <button class="btn precio">$40.000</button>
+            <input type="number" class="cantidad-input" min="1" value="1">
+            <button class="btn comprar">Comprar</button>
+        </div>
+    </div>
+
+    <div class="product">
+        <h3>Decoracion</h3>
+        <img src={{ asset('img/decoracion-8.jpg') }} alt="decoracion">
+        <div>
+            <button class="btn precio">$40.000</button>
+            <input type="number" class="cantidad-input" min="1" value="1">
+            <button class="btn comprar">Comprar</button>
+        </div>
+    </div>
+    
+    <div class="product">
+        <h3>Juegos</h3>
+        <img src={{ asset('img/juegos.jpg') }} alt="Juegos">
+        <div>
+            <button class="btn precio">$15.000</button>
+            <input type="number" class="cantidad-input" min="1" value="1">
+            <button class="btn comprar">Comprar</button>
+        </div>
+      </div>
+
+      <div class="product">
+        <h3>Pelotas anti estres</h3>
+        <img src={{ asset('img/pelotas_anti_estres.jpg') }} alt="pelotas anti estres">
+        <div>
+            <button class="btn precio">$7.000</button>
+            <input type="number" class="cantidad-input" min="1" value="1">
+            <button class="btn comprar">Comprar</button>
+        </div>
+      </div>
+
+      <div class="product">
+        <h3>Piñata patricio</h3>
+        <img src={{ asset('img/pinata1.jpg') }} alt="patricio">
+        <div>
+            <button class="btn precio">$7.000</button>
+            <input type="number" class="cantidad-input" min="1" value="1">
+            <button class="btn comprar">Comprar</button>
+        </div>
+      </div>
+
+      <div class="product">
+        <h3>Piñata</h3>
+        <img src={{ asset('img/pinata2.jpg') }} alt="patricio">
+        <div>
+            <button class="btn precio">$7.000</button>
+            <input type="number" class="cantidad-input" min="1" value="1">
+            <button class="btn comprar">Comprar</button>
+        </div>
+      </div>
+
+      <div class="product">
+        <h3>Piñata</h3>
+        <img src={{ asset('img/pinata3.jpg') }} alt="patricio">
+        <div>
+            <button class="btn precio">$7.000</button>
+            <input type="number" class="cantidad-input" min="1" value="1">
+            <button class="btn comprar">Comprar</button>
+        </div>
+      </div>
+
+      <div class="product">
+        <h3>Piñata</h3>
+        <img src={{ asset('img/pinata4.jpg') }} alt="patricio">
+        <div>
+            <button class="btn precio">$7.000</button>
+            <input type="number" class="cantidad-input" min="1" value="1">
+            <button class="btn comprar">Comprar</button>
+        </div>
+      </div>
+
+      <div class="product">
+        <h3>Piñata</h3>
+        <img src={{ asset('img/pinata5.jpg') }} alt="patricio">
+        <div>
+            <button class="btn precio">$7.000</button>
+            <input type="number" class="cantidad-input" min="1" value="1">
+            <button class="btn comprar">Comprar</button>
+        </div>
+      </div>
+
+      <div class="product">
+        <h3>Piñata</h3>
+        <img src={{ asset('img/pinata6.jpg') }} alt="patricio">
+        <div>
+            <button class="btn precio">$7.000</button>
+            <input type="number" class="cantidad-input" min="1" value="1">
+            <button class="btn comprar">Comprar</button>
+        </div>
+      </div>
+
+      <div class="product">
+        <h3>Piñata</h3>
+        <img src={{ asset('img/pinata7.jpg') }} alt="patricio">
+        <div>
+            <button class="btn precio">$7.000</button>
+            <input type="number" class="cantidad-input" min="1" value="1">
+            <button class="btn comprar">Comprar</button>
+        </div>
+      </div>
+
+      <div class="product">
+        <h3>Piñata</h3>
+        <img src={{ asset('img/pinata8.jpg') }} alt="patricio">
+        <div>
+            <button class="btn precio">$7.000</button>
+            <input type="number" class="cantidad-input" min="1" value="1">
+            <button class="btn comprar">Comprar</button>
+        </div>
+      </div>
+
+      <div class="product">
+        <h3>Piñata</h3>
+        <img src={{ asset('img/pinata10.jpg') }} alt="patricio">
+        <div>
+            <button class="btn precio">$7.000</button>
+            <input type="number" class="cantidad-input" min="1" value="1">
+            <button class="btn comprar">Comprar</button>
+        </div>
+      </div>
+
+      <div class="product">
+        <h3>Piñata</h3>
+        <img src={{ asset('img/pinata11.jpg') }} alt="patricio">
+        <div>
+            <button class="btn precio">$7.000</button>
+            <input type="number" class="cantidad-input" min="1" value="1">
+            <button class="btn comprar">Comprar</button>
+        </div>
+      </div>
+
+      <div class="product">
+        <h3>Piñata</h3>
+        <img src={{ asset('img/pinata12.jpg') }} alt="patricio">
+        <div>
+            <button class="btn precio">$7.000</button>
+            <input type="number" class="cantidad-input" min="1" value="1">
+            <button class="btn comprar">Comprar</button>
+        </div>
+      </div>
+
+      <div class="product">
+        <h3>Piñata</h3>
+        <img src={{ asset('img/pinata13.jpg') }} alt="patricio">
+        <div>
+            <button class="btn precio">$7.000</button>
+            <input type="number" class="cantidad-input" min="1" value="1">
+            <button class="btn comprar">Comprar</button>
+        </div>
+      </div>
+
+      <div class="product">
+        <h3>Piñata</h3>
+        <img src={{ asset('img/pinata14.jpg') }} alt="patricio">
+        <div>
+            <button class="btn precio">$7.000</button>
+            <input type="number" class="cantidad-input" min="1" value="1">
+            <button class="btn comprar">Comprar</button>
+        </div>
+      </div>
+
+      <div class="product">
+        <h3>Piñata</h3>
+        <img src={{ asset('img/pinata15.jpg') }} alt="patricio">
+        <div>
+            <button class="btn precio">$7.000</button>
+            <input type="number" class="cantidad-input" min="1" value="1">
+            <button class="btn comprar">Comprar</button>
+        </div>
+      </div>
+
+      <div class="product">
+        <h3>Piñata</h3>
+        <img src={{ asset('img/pinata16.jpg') }} alt="patricio">
+        <div>
+            <button class="btn precio">$7.000</button>
+            <input type="number" class="cantidad-input" min="1" value="1">
+            <button class="btn comprar">Comprar</button>
+        </div>
+      </div>
+
+      <div class="product">
+        <h3>Piñata</h3>
+        <img src={{ asset('img/pinata17.jpg') }} alt="patricio">
+        <div>
+            <button class="btn precio">$7.000</button>
+            <input type="number" class="cantidad-input" min="1" value="1">
+            <button class="btn comprar">Comprar</button>
+        </div>
+      </div>
+
+      <!-- Carrito de compras-->
+<div class="carrito-container">
+  <button class="btn-carrito" id="btn-carrito">
+    🛒 Carrito <span id="contador-carrito">0</span>
+  </button>
+  <div class="carrito-compras" id="carrito-compras">
+    <h2>Tu Carrito</h2>
+    <div id="items-carrito"></div>
+    <div class="total-carrito">
+      <p>Total: $<span id="total-carrito">0</span></p>
+    </div>
+    <button class="btn vaciar-carrito" id="vaciar-carrito">Vaciar Carrito</button>
+    <button class="btn comprar-carrito" id="comprar-carrito">Finalizar Compra</button>
+  </div>
+</div>
+
+<!-- Modal metodos de Pago -->
+<div class="modal-pago" id="modal-pago">
+  <div class="contenido-modal">
+    <span class="cerrar-modal">&times;</span>
+    <h2>Selecciona tu método de pago</h2>
+
+    <div class="metodos-pago">
+      <div class="metodo-pago" data-metodo="nequi">
+        <img src="img/nequi.webp" alt="Nequi">
+        <span>Nequi</span>
+      </div>
+      <div class="metodo-pago" data-metodo="daviplata">
+        <img src="img/daviplata.webp" alt="DaviPlata">
+        <span>DaviPlata</span>
+      </div>
+      <div class="metodo-pago" data-metodo="contraentrega">
+        <img src="img/mastercard.webp" alt="Contra entrega">
+        <span>Pago Contra Entrega</span>
+      </div>
+    </div>
+
+    <!-- Formulario Nequi -->
+    <div class="formulario-pago" id="form-nequi">
+      <h3>Pago con Nequi</h3>
+      <p>Transfiere a nuestro número Nequi:</p>
+      <div class="datos-pago">
+        <p><strong>Número:</strong> 310 123 4567</p>
+        <p><strong>Nombre:</strong> Happy Children SAS</p>
+        <p><strong>Valor a transferir:</strong> $<span id="monto-nequi">0</span></p>
+      </div>
+      <div class="form-group">
+        <label for="comprobante-nequi">Número de comprobante (opcional)</label>
+        <input type="text" id="comprobante-nequi" placeholder="Últimos 4 dígitos">
+      </div>
+      <button class="btn-pagar" id="btn-nequi">Confirmar Pago</button>
+    </div>
+
+    <!-- Formulario DaviPlata -->
+    <div class="formulario-pago" id="form-daviplata">
+      <h3>Pago con DaviPlata</h3>
+      <p>Transfiere a nuestro número DaviPlata:</p>
+      <div class="datos-pago">
+        <p><strong>Número:</strong> 350 987 6543</p>
+        <p><strong>Nombre:</strong> Happy Children SAS</p>
+        <p><strong>Valor a transferir:</strong> $<span id="monto-daviplata">0</span></p>
+      </div>
+      <div class="form-group">
+        <label for="comprobante-daviplata">Número de comprobante (opcional)</label>
+        <input type="text" id="comprobante-daviplata" placeholder="Últimos 4 dígitos">
+      </div>
+      <button class="btn-pagar" id="btn-daviplata">Confirmar Pago</button>
+    </div>
+
+    <!-- Formulario Contra Entrega -->
+    <div class="formulario-pago" id="form-contraentrega">
+      <h3>Pago Contra Entrega</h3>
+      <p>Pagarás cuando recibas tu pedido en efectivo o con tarjeta.</p>
+      <p>Por favor confirma tu dirección de entrega:</p>
+      <div class="form-group">
+        <label for="direccion-entrega">Dirección de Entrega*</label>
+        <input type="text" id="direccion-entrega" required>
+      </div>
+      <div class="form-group">
+        <label for="telefono-contacto">Teléfono de Contacto*</label>
+        <input type="tel" id="telefono-contacto" required>
+      </div>
+      <button class="btn-pagar" id="btn-confirmar-entrega">Confirmar Pedido</button>
+    </div>
+  </div>
+</div>
+
+<!-- Enlace al JS -->
+<script th:src="@{/js/carrito.js}"></script>
+
+
+
+
+</body>
+</html>

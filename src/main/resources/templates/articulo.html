@@ -35,7 +35,8 @@
   <div class="container">
 
     <div class="product">
-      <img src="img/antifaz.jpg" alt="Antifaz">
+      <img th:src="@{/img/antifaz.jpg}" alt="Antifaz">
+
       <h3>Antifaz</h3>
       <button class="btn precio">$45.000</button>
       <input type="number" class="cantidad-input" min="1" value="1">
@@ -43,7 +44,7 @@
     </div>
 
     <div class="product">
-      <img src="img/bolsa dulces-2.jpg" alt="Bolsa de dulces">
+      <img th:src="@{/img/bolsa dulces-2.jpg}" alt="Bolsa de dulces">
       <h3>Bolsa de Dulces</h3>
       <button class="btn precio">$45.000</button>
       <input type="number" class="cantidad-input" min="1" value="1">
@@ -51,7 +52,7 @@
     </div>
 
     <div class="product">
-      <img src="img/cubiertos de fiesta-1.jpg" alt="Cubiertos de fiesta">
+      <img th:src="@{/img/cubiertos de fiesta-1.jpg}" alt="Cubiertos de fiesta">
       <h3>Cubiertos de Fiesta</h3>
       <button class="btn precio">$48.000</button>
       <input type="number" class="cantidad-input" min="1" value="1">
@@ -59,7 +60,7 @@
     </div>
 
     <div class="product">
-      <img src="img/cubiertos de fiesta-2.jpg" alt="Cubiertos de fiesta">
+      <img th:src="@{/img/cubiertos de fiesta-2.jpg}" alt="Cubiertos de fiesta">
       <h3>Cubiertos de Fiesta</h3>
       <button class="btn precio">$48.000</button>
       <input type="number" class="cantidad-input" min="1" value="1">
@@ -67,7 +68,7 @@
     </div>
 
     <div class="product">
-      <img src="img/cubiertos de fiesta-3.jpg" alt="Cubiertos de fiesta">
+      <img th:src="@{/img/cubiertos de fiesta-3.jpg}" alt="Cubiertos de fiesta">
       <h3>Cubiertos de Fiesta</h3>
       <button class="btn precio">$48.000</button>
       <input type="number" class="cantidad-input" min="1" value="1">
@@ -75,7 +76,7 @@
     </div>
 
     <div class="product">
-      <img src="img/cubiertos de fiesta-4.jpg" alt="Cubiertos de fiesta">
+      <img th:src="@{/img/cubiertos de fiesta-4.jpg}" alt="Cubiertos de fiesta">
       <h3>Cubiertos de Fiesta</h3>
       <button class="btn precio">$48.000</button>
       <input type="number" class="cantidad-input" min="1" value="1">
@@ -83,7 +84,7 @@
     </div>
 
     <div class="product">
-      <img src="img/cubiertos de fiesta-5.jpg" alt="Cubiertos de fiesta">
+      <img th:src="@{/img/cubiertos de fiesta-5.jpg}" alt="Cubiertos de fiesta">
       <h3>Cubiertos de Fiesta</h3>
       <button class="btn precio">$48.000</button>
       <input type="number" class="cantidad-input" min="1" value="1">
@@ -91,7 +92,7 @@
     </div>
 
     <div class="product">
-      <img src="img/cubiertos de fiesta-6.jpg" alt="Cubiertos de fiesta">
+      <img th:src="@{/img/cubiertos de fiesta-6.jpg}" alt="Cubiertos de fiesta">
       <h3>Cubiertos de Fiesta</h3>
       <button class="btn precio">$48.000</button>
       <input type="number" class="cantidad-input" min="1" value="1">
@@ -99,7 +100,7 @@
     </div>
 
     <div class="product">
-      <img src="img/globos.jpg" alt="Globos">
+      <img th:src="@{/img/globos.jpg}" alt="Globos">
       <h3>Globos metalicos mixtos</h3>
       <button class="btn precio">$45.000</button>
       <input type="number" class="cantidad-input" min="1" value="1">
@@ -107,497 +108,12 @@
     </div>
 
      <div class="product">
-      <img src="img/globo_m2.jpg" alt="Globos">
+      <img th:src="@{/img/globo_m2.jpg}" alt="Globos">
       <h3>Globos metalicos unicolor</h3>
       <button class="btn precio">$45.000</button>
       <input type="number" class="cantidad-input" min="1" value="1">
       <button class="btn comprar">Comprar</button>
     </div>
-
-    <!-- Producto 5 -->
-    <div class="product">
-        <h3>Caja de 15</h3>
-        <img src={{ asset('img/cajas.jpg') }} alt="Caja de 15 años">
-        <div>
-            <button class="btn precio">$22.000</button>
-            <input type="number" class="cantidad-input" min="1" value="1">
-            <button class="btn comprar">Comprar</button>
-        </div>
-    </div>
-
-    <!-- Producto 6 -->
-    <div class="product">
-        <h3>Piñata sencilla</h3>
-        <img src={{ asset('img/pinata_s.jpg') }} alt="Piñata">
-        <div>
-            <button class="btn precio">$8.000</button>
-            <input type="number" class="cantidad-input" min="1" value="1">
-            <button class="btn comprar">Comprar</button>
-        </div>
-    </div>
-
-    <!-- Producto 7 -->
-    <div class="product">
-        <h3>Platos de Coche</h3>
-        <img src={{ asset('img/platos_c.jpg') }} alt="Coche">
-        <div>
-            <button class="btn precio">$15.000</button>
-            <input type="number" class="cantidad-input" min="1" value="1">
-            <button class="btn comprar">Comprar</button>
-        </div>
-    </div>
-
-    <!-- Producto 8 -->
-    <div class="product">
-        <h3>Cono</h3>
-        <img src={{ asset('img/conos.jpg') }} alt="Cono">
-        <div>
-            <button class="btn precio">$18.000</button>
-            <input type="number" class="cantidad-input" min="1" value="1">
-            <button class="btn comprar">Comprar</button>
-        </div>
-    </div>
-
-    <!-- Producto 9 -->
-    <div class="product">
-        <h3>Espantasuegra</h3>
-        <img src="img/espantasuegra.jpg" alt="Espantasuegra">
-        <div>
-            <button class="btn precio">$12.000</button>
-            <input type="number" class="cantidad-input" min="1" value="1">
-            <button class="btn comprar">Comprar</button>
-        </div>
-    </div>
-
-    <!-- Producto 10 -->
-    <div class="product">
-        <h3>Gafas</h3>
-        <img src="img/gafas.jpg" alt="Gafas">
-        <div>
-            <button class="btn precio">$25.000</button>
-            <input type="number" class="cantidad-input" min="1" value="1">
-            <button class="btn comprar">Comprar</button>
-        </div>
-    </div>
-
-    <!-- Producto 11 -->
-    <div class="product">
-        <h3>Gorro de fiesta sencillo</h3>
-        <img src={{ asset('img/gorro.jpg') }} alt="Gorro">
-        <div>
-            <button class="btn precio">$20.000</button>
-            <input type="number" class="cantidad-input" min="1" value="1">
-            <button class="btn comprar">Comprar</button>
-        </div>
-    </div>
-
-     <div class="product">
-        <h3>Sombrero de fiesta</h3>
-        <img src={{ asset('img/gorro1.jpg') }} alt="Gorro">
-        <div>
-            <button class="btn precio">$20.000</button>
-            <input type="number" class="cantidad-input" min="1" value="1">
-            <button class="btn comprar">Comprar</button>
-        </div>
-    </div>
-
-     <div class="product">
-        <h3>Gorro infantiles</h3>
-        <img src={{ asset('img/gorro2.jpg') }} alt="Gorro">
-        <div>
-            <button class="btn precio">$20.000</button>
-            <input type="number" class="cantidad-input" min="1" value="1">
-            <button class="btn comprar">Comprar</button>
-        </div>
-    </div>
-    
-    <!-- Producto 12 -->
-    <div class="product">
-        <h3>Luces</h3>
-        <img src="img/luces.jpg" alt="Luces">
-        <div>
-            <button class="btn precio">$55.000</button>
-            <input type="number" class="cantidad-input" min="1" value="1">
-            <button class="btn comprar">Comprar</button>
-        </div>
-    </div>
-
-    <!-- Producto 13 -->
-    <div class="product">
-        <h3>Espanta suegra infantil</h3>
-        <img src={{ asset('img/espantasuegras_infantil.jpg') }} alt="espantasuegras infantil">
-        <div>
-            <button class="btn precio">$10.000</button>
-            <input type="number" class="cantidad-input" min="1" value="1">
-            <button class="btn comprar">Comprar</button>
-        </div>
-    </div>
-
-    <!-- Producto 14 -->
-    <div class="product">
-        <h3>Piñata</h3>
-        <img src="img/pinata.jpg" alt="Piñata">
-        <div>
-            <button class="btn precio">$60.000</button>
-            <input type="number" class="cantidad-input" min="1" value="1">
-            <button class="btn comprar">Comprar</button>
-        </div>
-    </div>
-
-    
-    <div class="product">
-        <h3>Serpentina sencilla</h3>
-        <img src={{ asset('img/serpentina.jpg') }} alt="Serpentina">
-        <div>
-            <button class="btn precio">$15.000</button>
-            <input type="number" class="cantidad-input" min="1" value="1">
-            <button class="btn comprar">Comprar</button>
-        </div>
-    </div>
-
-    <div class="product">
-        <h3>Serpentina metalisada</h3>
-        <img src={{ asset('img/Serpentina1.jpg') }} alt="Serpentina">
-        <div>
-            <button class="btn precio">$15.000</button>
-            <input type="number" class="cantidad-input" min="1" value="1">
-            <button class="btn comprar">Comprar</button>
-        </div>
-    </div>
-
-
-    <!-- Producto  -->
-    <div class="product">
-        <h3>Caja de letras</h3>
-        <img src={{ asset('img/cajas1.jpg') }} alt="Caja de letras">
-        <div>
-            <button class="btn precio">$22.000</button>
-            <input type="number" class="cantidad-input" min="1" value="1">
-            <button class="btn comprar">Comprar</button>
-        </div>
-    </div>
-
-    <!-- Producto 5 -->
-    <div class="product">
-        <h3>Caja sencilla</h3>
-        <img src={{ asset('img/cajas2.jpg') }} alt="Caja sencilla">
-        <div>
-            <button class="btn precio">$22.000</button>
-            <input type="number" class="cantidad-input" min="1" value="1">
-            <button class="btn comprar">Comprar</button>
-        </div>
-    </div>
-
-    <div class="product">
-        <h3>Lanza confeti</h3>
-        <img src={{ asset('img/confeti.jpg') }} alt="Confeti">
-        <div>
-            <button class="btn precio">$22.000</button>
-            <input type="number" class="cantidad-input" min="1" value="1">
-            <button class="btn comprar">Comprar</button>
-        </div>
-    </div>
-
-    <div class="product">
-        <h3>Confeti en bolsa</h3>
-        <img src={{ asset('img/confeti1.jpg') }} alt="Confeti">
-        <div>
-            <button class="btn precio">$22.000</button>
-            <input type="number" class="cantidad-input" min="1" value="1">
-            <button class="btn comprar">Comprar</button>
-        </div>
-    </div>
-
-    <div class="product">
-        <h3>Bolsa de dulces</h3>
-        <img src={{ asset('img/bolsa_dulces.jpg') }} alt="dulces">
-        <div>
-            <button class="btn precio">$8.000</button>
-            <input type="number" class="cantidad-input" min="1" value="1">
-            <button class="btn comprar">Comprar</button>
-        </div>
-    </div>
-
-     <div class="product">
-        <h3>Bolsas</h3>
-        <img src={{ asset('img/bolsa.jpg') }} alt="bolsa">
-        <div>
-            <button class="btn precio">$5.000</button>
-            <input type="number" class="cantidad-input" min="1" value="1">
-            <button class="btn comprar">Comprar</button>
-        </div>
-    </div>
-
-     <div class="product">
-        <h3>Collares</h3>
-        <img src={{ asset('img/collar.jpg') }} alt="collar">
-        <div>
-            <button class="btn precio">$10.000</button>
-            <input type="number" class="cantidad-input" min="1" value="1">
-            <button class="btn comprar">Comprar</button>
-        </div>
-    </div>
-
-    <div class="product">
-        <h3>Decoracion</h3>
-        <img src={{ asset('img/decoracion-1.jpg') }} alt="decoracion">
-        <div>
-            <button class="btn precio">$40.000</button>
-            <input type="number" class="cantidad-input" min="1" value="1">
-            <button class="btn comprar">Comprar</button>
-        </div>
-    </div>
-
-    <div class="product">
-        <h3>Decoracion</h3>
-        <img src={{ asset('img/decoracion-2.jpg') }} alt="decoracion">
-        <div>
-            <button class="btn precio">$40.000</button>
-            <input type="number" class="cantidad-input" min="1" value="1">
-            <button class="btn comprar">Comprar</button>
-        </div>
-    </div>
-
-    <div class="product">
-        <h3>Decoracion</h3>
-        <img src={{ asset('img/decoracion-3.jpg') }} alt="decoracion">
-        <div>
-            <button class="btn precio">$40.000</button>
-            <input type="number" class="cantidad-input" min="1" value="1">
-            <button class="btn comprar">Comprar</button>
-        </div>
-    </div>
-
-    <div class="product">
-        <h3>Decoracion</h3>
-        <img src={{ asset('img/decoracion-4.jpg') }} alt="decoracion">
-        <div>
-            <button class="btn precio">$40.000</button>
-            <input type="number" class="cantidad-input" min="1" value="1">
-            <button class="btn comprar">Comprar</button>
-        </div>
-    </div>
-
-    <div class="product">
-        <h3>Decoracion</h3>
-        <img src={{ asset('img/decoracion-5.jpg') }} alt="decoracion">
-        <div>
-            <button class="btn precio">$40.000</button>
-            <input type="number" class="cantidad-input" min="1" value="1">
-            <button class="btn comprar">Comprar</button>
-        </div>
-    </div>
-
-    <div class="product">
-        <h3>Decoracion</h3>
-        <img src={{ asset('img/decoracion-6.jpg') }} alt="decoracion">
-        <div>
-            <button class="btn precio">$40.000</button>
-            <input type="number" class="cantidad-input" min="1" value="1">
-            <button class="btn comprar">Comprar</button>
-        </div>
-    </div>
-
-
-    <div class="product">
-        <h3>Decoracion</h3>
-        <img src={{ asset('img/decoracion-7.jpg') }} alt="decoracion">
-        <div>
-            <button class="btn precio">$40.000</button>
-            <input type="number" class="cantidad-input" min="1" value="1">
-            <button class="btn comprar">Comprar</button>
-        </div>
-    </div>
-
-    <div class="product">
-        <h3>Decoracion</h3>
-        <img src={{ asset('img/decoracion-8.jpg') }} alt="decoracion">
-        <div>
-            <button class="btn precio">$40.000</button>
-            <input type="number" class="cantidad-input" min="1" value="1">
-            <button class="btn comprar">Comprar</button>
-        </div>
-    </div>
-    
-    <div class="product">
-        <h3>Juegos</h3>
-        <img src={{ asset('img/juegos.jpg') }} alt="Juegos">
-        <div>
-            <button class="btn precio">$15.000</button>
-            <input type="number" class="cantidad-input" min="1" value="1">
-            <button class="btn comprar">Comprar</button>
-        </div>
-      </div>
-
-      <div class="product">
-        <h3>Pelotas anti estres</h3>
-        <img src={{ asset('img/pelotas_anti_estres.jpg') }} alt="pelotas anti estres">
-        <div>
-            <button class="btn precio">$7.000</button>
-            <input type="number" class="cantidad-input" min="1" value="1">
-            <button class="btn comprar">Comprar</button>
-        </div>
-      </div>
-
-      <div class="product">
-        <h3>Piñata patricio</h3>
-        <img src={{ asset('img/pinata1.jpg') }} alt="patricio">
-        <div>
-            <button class="btn precio">$7.000</button>
-            <input type="number" class="cantidad-input" min="1" value="1">
-            <button class="btn comprar">Comprar</button>
-        </div>
-      </div>
-
-      <div class="product">
-        <h3>Piñata</h3>
-        <img src={{ asset('img/pinata2.jpg') }} alt="patricio">
-        <div>
-            <button class="btn precio">$7.000</button>
-            <input type="number" class="cantidad-input" min="1" value="1">
-            <button class="btn comprar">Comprar</button>
-        </div>
-      </div>
-
-      <div class="product">
-        <h3>Piñata</h3>
-        <img src={{ asset('img/pinata3.jpg') }} alt="patricio">
-        <div>
-            <button class="btn precio">$7.000</button>
-            <input type="number" class="cantidad-input" min="1" value="1">
-            <button class="btn comprar">Comprar</button>
-        </div>
-      </div>
-
-      <div class="product">
-        <h3>Piñata</h3>
-        <img src={{ asset('img/pinata4.jpg') }} alt="patricio">
-        <div>
-            <button class="btn precio">$7.000</button>
-            <input type="number" class="cantidad-input" min="1" value="1">
-            <button class="btn comprar">Comprar</button>
-        </div>
-      </div>
-
-      <div class="product">
-        <h3>Piñata</h3>
-        <img src={{ asset('img/pinata5.jpg') }} alt="patricio">
-        <div>
-            <button class="btn precio">$7.000</button>
-            <input type="number" class="cantidad-input" min="1" value="1">
-            <button class="btn comprar">Comprar</button>
-        </div>
-      </div>
-
-      <div class="product">
-        <h3>Piñata</h3>
-        <img src={{ asset('img/pinata6.jpg') }} alt="patricio">
-        <div>
-            <button class="btn precio">$7.000</button>
-            <input type="number" class="cantidad-input" min="1" value="1">
-            <button class="btn comprar">Comprar</button>
-        </div>
-      </div>
-
-      <div class="product">
-        <h3>Piñata</h3>
-        <img src={{ asset('img/pinata7.jpg') }} alt="patricio">
-        <div>
-            <button class="btn precio">$7.000</button>
-            <input type="number" class="cantidad-input" min="1" value="1">
-            <button class="btn comprar">Comprar</button>
-        </div>
-      </div>
-
-      <div class="product">
-        <h3>Piñata</h3>
-        <img src={{ asset('img/pinata8.jpg') }} alt="patricio">
-        <div>
-            <button class="btn precio">$7.000</button>
-            <input type="number" class="cantidad-input" min="1" value="1">
-            <button class="btn comprar">Comprar</button>
-        </div>
-      </div>
-
-      <div class="product">
-        <h3>Piñata</h3>
-        <img src={{ asset('img/pinata10.jpg') }} alt="patricio">
-        <div>
-            <button class="btn precio">$7.000</button>
-            <input type="number" class="cantidad-input" min="1" value="1">
-            <button class="btn comprar">Comprar</button>
-        </div>
-      </div>
-
-      <div class="product">
-        <h3>Piñata</h3>
-        <img src={{ asset('img/pinata11.jpg') }} alt="patricio">
-        <div>
-            <button class="btn precio">$7.000</button>
-            <input type="number" class="cantidad-input" min="1" value="1">
-            <button class="btn comprar">Comprar</button>
-        </div>
-      </div>
-
-      <div class="product">
-        <h3>Piñata</h3>
-        <img src={{ asset('img/pinata12.jpg') }} alt="patricio">
-        <div>
-            <button class="btn precio">$7.000</button>
-            <input type="number" class="cantidad-input" min="1" value="1">
-            <button class="btn comprar">Comprar</button>
-        </div>
-      </div>
-
-      <div class="product">
-        <h3>Piñata</h3>
-        <img src={{ asset('img/pinata13.jpg') }} alt="patricio">
-        <div>
-            <button class="btn precio">$7.000</button>
-            <input type="number" class="cantidad-input" min="1" value="1">
-            <button class="btn comprar">Comprar</button>
-        </div>
-      </div>
-
-      <div class="product">
-        <h3>Piñata</h3>
-        <img src={{ asset('img/pinata14.jpg') }} alt="patricio">
-        <div>
-            <button class="btn precio">$7.000</button>
-            <input type="number" class="cantidad-input" min="1" value="1">
-            <button class="btn comprar">Comprar</button>
-        </div>
-      </div>
-
-      <div class="product">
-        <h3>Piñata</h3>
-        <img src={{ asset('img/pinata15.jpg') }} alt="patricio">
-        <div>
-            <button class="btn precio">$7.000</button>
-            <input type="number" class="cantidad-input" min="1" value="1">
-            <button class="btn comprar">Comprar</button>
-        </div>
-      </div>
-
-      <div class="product">
-        <h3>Piñata</h3>
-        <img src={{ asset('img/pinata16.jpg') }} alt="patricio">
-        <div>
-            <button class="btn precio">$7.000</button>
-            <input type="number" class="cantidad-input" min="1" value="1">
-            <button class="btn comprar">Comprar</button>
-        </div>
-      </div>
-
-      <div class="product">
-        <h3>Piñata</h3>
-        <img src={{ asset('img/pinata17.jpg') }} alt="patricio">
-        <div>
-            <button class="btn precio">$7.000</button>
-            <input type="number" class="cantidad-input" min="1" value="1">
-            <button class="btn comprar">Comprar</button>
-        </div>
-      </div>
 
       <!-- Carrito de compras-->
 <div class="carrito-container">

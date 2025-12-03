@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
+<head>
+    <meta charset="UTF-8">
+    <title>Dashboard - Happy Children Piñatería</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    
+    <!-- Bootstrap 5 -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Font Awesome para iconos bonitos -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <!-- Chart.js -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    
+    <style>
+        :root {
+            --primary-pink: #FF6B9D;
+            --primary-turquoise: #34C0B8;
+            --light-pink: #ffeef5;
+            --light-turquoise: #e6f7f6;
+        }
+        body {
+            background: linear-gradient(135deg, #ffeef5 0%, #e6f7f6 100%);
+            min-height: 100vh;
+            font-family: 'Poppins', sans-serif;
+        }
+        .navbar-custom {
+            background: linear-gradient(90deg, var(--primary-pink), var(--primary-turquoise));
+        }
+        .card-pink { border-top: 5px solid var(--primary-pink); }
+        .card-turquoise { border-top: 5px solid var(--primary-turquoise); }
+        .stat-card {
+            border-radius: 20px;
+            box-shadow: 0 10px 20px rgba(255,107,157,0.15);
+            transition: all 0.3s;
+        }
+        .stat-card:hover {
+            transform: translateY(-10px);
+        }
+        .btn-pink {
+            background: var(--primary-pink);
+            border: none;
+            border-radius: 30px;
+            padding: 12px 30px;
+        }
+        .btn-pink:hover {
+            background: #ff4b8d;
+        }
+        .btn-turquoise {
+            background: var(--primary-turquoise);
+            border: none;
+            border-radius: 30px;
+            padding: 12px 30px;
+        }
+        h1, h2, h5 { color: var(--primary-pink); }
+    </style>
+</head>
+<body>
+
+<!-- Navbar -->
+<nav class="navbar navbar-expand-lg navbar-dark navbar-custom shadow-lg">
+    <div class="container-fluid">
+        <a class="navbar-brand fw-bold fs-4" href="/">Happy Children</a>
+        <div class="d-flex align-items-center text-white">
+            <span class="me-3">Hola, <span th:text="${#authentication?.principal?.username} ?: 'Admin'">Admin</span>!</span>
+            <a th:href="@{/logout}" class="btn btn-outline-light btn-sm">Cerrar sesión</a>
+        </div>
+    </div>
+</nav>
+
+<div class="container mt-5">
+    <div class="text-center mb-5">
+        <h1 class="display-4">¡Bienvenido al Panel de Control!</h1>
+        <p class="lead">Happy Children Piñatería - Todo bajo control</p>
+    </div>
+
+    <!-- Tarjetas de estadísticas -->
+    <div class="row g-4 mb-5">
+        <div class="col-md-3">
+            <div class="card stat-card card-pink text-white" style="background: var(--primary-pink);">
+                <div class="card-body text-center">
+                    <i class="fas fa-coins fa-3x mb-3"></i>
+                    <h5>Ventas del día</h5>
+                    <h2 th:text="${ventasHoy != null} ? ${'$#' + ventasHoy} : '$0'">$1,240</h2>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-3">
+            <div class="card stat-card card-turquoise text-white" style="background: var(--primary-turquoise);">
+                <div class="card-body text-center">
+                    <i class="fas fa-shopping-cart fa-3x mb-3"></i>
+                    <h5>Pedidos hoy</h5>
+                    <h2 th:text="${pedidosHoy}">8</h2>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-3">
+            <div class="card stat-card bg-warning text-white">
+                <div class="card-body text-center">
+                    <i class="fas fa-exclamation-triangle fa-3x mb-3"></i>
+                    <h5>Bajo stock</h5>
+                    <h2 th:text="${bajoStock}">3</h2>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-3">
+            <div class="card stat-card bg-success text-white">
+                <div class="card-body text-center">
+                    <i class="fas fa-users fa-3x mb-3"></i>
+                    <h5>Clientes nuevos</h5>
+                    <h2 th:text="${clientesNuevos}">12</h2>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="row">
+        <!-- Gráfico de ventas -->
+        <div class="col-lg-8 mb-4">
+            <div class="card shadow-lg" style="border-radius: 20px;">
+                <div class="card-body">
+                    <h4 class="text-center mb-4">Ventas últimos 7 días</h4>
+                    <canvas id="ventasChart"></canvas>
+                </div>
+            </div>
+        </div>
+
+        <!-- Accesos rápidos -->
+        <div class="col-lg-4">
+            <div class="card shadow-lg h-100" style="border-radius: 20px;">
+                <div class="card-body text-center">
+                    <h4 class="mb-4">Acciones rápidas</h4>
+                    <div class="d-grid gap-3">
+                        <a href="/articulos/nuevo" class="btn btn-pink btn-lg">
+                            <i class="fas fa-plus-circle"></i> Nuevo Producto
+                        </a>
+                        <a href="/pedidos" class="btn btn-turquoise btn-lg text-white">
+                            <i class="fas fa-list"></i> Ver Pedidos
+                        </a>
+                        <a href="/articulos" class="btn btn-outline-primary btn-lg">
+                            <i class="fas fa-box"></i> Inventario
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+    const ctx = document.getElementById('ventasChart').getContext('2d');
+    const ventasChart = new Chart(ctx, {
+        type: 'line',
+        data: {
+            labels: ['Lun', 'Mar', 'Mié', 'Jue', 'Vie', 'Sáb', 'Dom'],
+            datasets: [{
+                label: 'Ventas diarias',
+                data: [1200, 1900, 1500, 2100, 2800, 3500, 1800],
+                borderColor: '#FF6B9D',
+                backgroundColor: 'rgba(255, 107, 157, 0.2)',
+                tension: 0.4,
+                fill: true
+            }]
+        },
+        options: {
+            responsive: true,
+            plugins: { legend: { display: false } }
+        }
+    });
+</script>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
